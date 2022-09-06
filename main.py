@@ -1,2 +1,2 @@
-print("hello, suckers!")
-check = ""
+print("hello world!")
+check = ")"
