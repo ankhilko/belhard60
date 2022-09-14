@@ -4,13 +4,6 @@
 
 
 text = input('введите текст: \n').lower()
-dic_ch = {}
-
-for char in text:
-    if char.isalpha():
-        if char not in dic_ch:
-            dic_ch[char] = 1
-        else:
-            dic_ch[char] += 1
+dic_ch = {s: text.count(s) for s in text if s.isalpha()}
 
 print(dic_ch)
