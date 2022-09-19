@@ -12,7 +12,3 @@ for i in range(2, n + 1, 10):
     for j in range(i, min(i + 9, n + 1), 2):
         print(j, end=' ')
     print()
-
-
-
-
