@@ -5,8 +5,8 @@ a = input('строка \'a\': ')
 b = input('строка \'b\': ')
 x = 0
 
-for i in range(1, min(len(a), len(b))):
-    if a[i-1] == b[i-1]:
+for i in range(min(len(a), len(b))):
+    if a[i] == b[i]:
         x += 1
 
 print(f'в обеих строках под одинаковыми индексами стоит {x} пар букв')
