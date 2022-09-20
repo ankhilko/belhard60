@@ -96,24 +96,43 @@
 #         return a+b
 #     return baz
 
-def foo(n):
-    for i in range(n):
-        yield i
-
-print(list(foo(20)))
-
-for j in foo(10):
-    print(j)
+# def foo(n):
+#     for i in range(n):
+#         yield i
+#
+# print(list(foo(20)))
+#
+# for j in foo(10):
+#     print(j)
 
 
 # при рекурсии должа быть точка выхода
 
-def multi(numb):
-    res = 1
-    for i in numb:
-        if isinstance(i, (int, float)):
-            res *= i
-        else:
-            res *= multi(i)
-    return res
+# def multi(numb):
+#     res = 1
+#     for i in numb:
+#         if isinstance(i, (int, float)):
+#             res *= i
+#         else:
+#             res *= multi(i)
+#     return res
 
+
+
+def my_decorator(arg1):
+
+    def decorator(func):
+        def wrapper(a):
+            a = a * arg1 # предобработка
+            res = func(a)
+            res = f' result {a}, {res}' # постобработка
+            return res
+        return wrapper
+    return decorator
+
+
+@my_decorator(5)
+def foo(item):
+    return 900
+
+print(foo(4))
