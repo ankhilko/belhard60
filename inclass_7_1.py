@@ -75,10 +75,18 @@ class Markup():
         c = '~~' + str(self.price) + '~~'
         return a + '\n' + b + '\n' + c
 
+    def html(self):
+        a = '<b>' + self.title + '</b>'
+        b = '<i>' + self.description + '</i>'
+        c = '<strike>' + str(self.price) + '</strike>'
+        return a + '\n' + b + '\n' + c
+
+
 
 towar = Markup('Товар', 'Описание', 150)
 
 print(towar.markdown())
+print(towar.html())
 
 
 
