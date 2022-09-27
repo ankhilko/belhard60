@@ -226,6 +226,24 @@
 from http import HTTPStatus
 
 
+"""
+вводится число
+складывать число до тех пор пока не будет 1 знак
+"""
+
+n = 3456
+
+def summs(n):
+    while n > 10:
+        n = sum(int(i) for i in str(n))
+    return n
+
+print(summs(134342342342342342342342342398205972985629486529385))
+
+
+
+
+
 
 
 
