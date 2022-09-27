@@ -149,7 +149,25 @@
 # user.bar()
 #
 
-
+# from dataclasses import dataclass
+#
+# @dataclass
+# class User:
+#     name: str
+#     email: str
+#     age: int
+#     pass
+#
+# vasya = User(name='Vasya', email='vasya@info.com', age=20)
+#
+# vasya.email = 'v@info.com'
+#
+# print(vasya)
+#
+# print(vasya.__dict__)
+#
+# petya = User(**{'name': 'Petya', 'email': 'vasya@info.com', 'age': 20})
+# print(petya)
 
 
 
