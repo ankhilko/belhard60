@@ -40,38 +40,88 @@
 #
 #
 
-class CRUDUser():
+# class CRUDUser():
+#
+#     def create(self):
+#         pass
+#
+#     def read(self):
+#         pass
+#
+#     def update(self):
+#         pass
+#
+#     def delete(self):
+#         pass
+#
+#
+# class CRUDCategory():
+#
+#     def create(self):
+#         pass
+#
+#     def read(self):
+#         pass
+#
+#     def update(self):
+#         pass
+#
+#     def delete(self):
+#         pass
+#
+#
+# crud = CRUDUser()
+#
+#
+# def foo(crud):
+#     crud.get()
 
-    def create(self):
-        pass
+#
+# class Class:
+#     def foo(self): # public method
+#         print('foo')
+#         pass
+#     def __foo(self): # private class method
+#         print('foo')
+#         pass
+#     def _bar(self): # protected method
+#         print('bar')
+#         pass
+#
+#
+# c = Class()
+# c.__bar()
 
-    def read(self):
-        pass
-
-    def update(self):
-        pass
-
-    def delete(self):
-        pass
-class CRUDCategory():
-
-    def create(self):
-        pass
-
-    def read(self):
-        pass
-
-    def update(self):
-        pass
-
-    def delete(self):
-        pass
-
-crud = CRUDUser()
-
-def foo(crud):
-    crud.get()
-
+# class User:
+#
+#     def __init__(self, card_number: str):
+#         self.__card_number = card_number # не будет наследоваться приопределении субкласса!!!!!
+#
+#     @property
+#     def card_number(self):
+#         return '**** **** **** ' + self.__card_number[-4:]
+#
+#     @card_number.setter
+#     def card_number(self, value):
+#         self.__card_number = value
+#
+#
+# class Manager(User):
+#     def __init__(self, card_number: str):
+#         super().__init__(card_number)
+#         self.__card_number = card_number
+#     @property
+#     def card_number(self):
+#         return self.__card_number
+#
+#     @card_number.setter
+#     def card_number(self, value):
+#         self.__card_number = value
+#
+#
+# vasya = Manager('2434 3423 2342 3242')
+#
+# print(vasya.card_number)
 
 
 
