@@ -124,4 +124,34 @@
 # print(vasya.card_number)
 
 
+# from abc import ABC, abstractmethod
+# # for all abstract classes
+#
+# class User(ABC):
+#     @abstractmethod # обязательный к определению в дочернем классе!!!!!
+#     def foo(self):
+#         pass
+#
+#     def bar(self):
+#         print('bar')
+#
+# class Manager(User):
+#     def __init__(self):
+#         pass
+#
+#     def foo(self):
+#         print('foo')
+#
+#
+# user = Manager()
+#
+# user.foo()
+# user.bar()
+#
+
+
+
+
+
+
 
