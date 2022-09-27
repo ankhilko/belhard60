@@ -171,5 +171,61 @@
 
 
 
+# from dataclasses import dataclass
+#
+# @dataclass
+# class User:
+#     name: str
+#     email: str
+#     age: int
+#     pass
+#
+# vasya = User(name='Vasya', email='vasya@info.com', age=20)
+#
+#
+#
+# def birthday(self):
+#     self.age += 1
+#
+# User = type(
+#     'User',
+#     (),
+#     {'name': None, 'email': None, 'age': None, 'birthday': birthday}
+#     # {'name': 'vasya', 'email': 'v@email', 'age': 20, 'birthday': birthday}
+# )
+#
+# vasya = User()
+# vasya.name = 'vasya'
+# vasya.email = 'v@email'
+# vasya.age = 20
+#
+# print(vasya)
+
+
+# from enum import Enum
+#
+# class Factory(int, Enum):
+#     Lenovo: int = 45678
+#     ASUA: int = 9876
+#     HP: int = 3462
+#
+# code = 6879
+# if code == Factory.Lenovo:
+#     print('correct')
+#
+# from enum import IntEnum
+#
+# data = [('Lenovo', 4), ('Asus', 7)]
+# Factory = IntEnum('Factory', data)
+#
+# print(Factory)
+# if 4 == Factory.Lenovo:
+#     print('it is Lenovo')
+
+
+from http import HTTPStatus
+
+
+
 
 
