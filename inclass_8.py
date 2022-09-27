@@ -166,7 +166,7 @@
 #
 # print(vasya.__dict__)
 #
-# petya = User(**{'name': 'Petya', 'email': 'vasya@info.com', 'age': 20})
+# petya = User(**{'name': 'Petya', 'email': 'p@info.com', 'age': 20})
 # print(petya)
 
 
