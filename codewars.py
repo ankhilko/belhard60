@@ -57,7 +57,8 @@ url = input()
 
 username: str
 
-if match := re.search(r'^(?:https?://)?(?:www\.)?twitter.com/(.+)(?:/)?$', url, re.IGNORECASE):
+if match := re.search(r'^(?:https?://)?(?:www\.)?twitter.com/([a-z0-9_]+)/?$', url, re.IGNORECASE):
+# if match := re.search(r'^(?:https?://)?(?:www\.)?twitter.com/([a-z0-9_]+)', url, re.IGNORECASE):
     username = match.group(1)
 
 print(username)
