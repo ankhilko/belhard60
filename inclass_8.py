@@ -241,8 +241,14 @@ def summs(n):
 print(summs(134342342342342342342342342398205972985629486529385))
 
 
+def summs2(n):
+    while n > 10:
+        n = str(sum(map(int, n)))
 
+n = 134342342342342342342342342398205972985629486529385
+print(n % 9 or n and 9)
 
+print (0 and 7)
 
 
 
