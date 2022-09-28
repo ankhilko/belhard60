@@ -36,17 +36,30 @@
 # print(duplicate_encode('sdfghfghjfeogri'))
 
 
+# import re
+#
+# url = input('input twitter username: ').strip()
+# # https://www.twitter.com/sanr
+# # http://www.twitter.com/sanr
+# # https://twitter.com/sanr
+# # http://twitter.com/sanr
+# # www.twitter.com/sanr
+# # twitter.com/sanr
+# # sanr
+# username = re.sub(r"^(https?://)?(www\.)?twitter\.con/", "", url)
+#
+# print(f'twitter user name = {username}')
+
+
 import re
 
-url = input('input twitter username: ').strip()
-# https://www.twitter.com/sanr
-# http://www.twitter.com/sanr
-# https://twitter.com/sanr
-# http://twitter.com/sanr
-# www.twitter.com/sanr
-# twitter.com/sanr
-# sanr
-username = re.sub(r"^(https?://)?(www\.)?twitter\.con/", "", url)
+url = input()
 
-print(f'twitter user name = {username}')
+username: str
+
+if match := re.search(r'^(?:https?://)?(?:www\.)?twitter.com/(.+)(?:/)?$', url, re.IGNORECASE):
+    username = match.group(1)
+
+print(username)
+
 
