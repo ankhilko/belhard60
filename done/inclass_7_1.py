@@ -60,25 +60,37 @@
 # <i>Very Cool Description</i>
 # <strike>100USD</strike>
 
-class Markup():
+# class Markup():
+#
+#     def __init__(self, title: str, description: str, price: int) -> None:
+#         self.title = title
+#         self.description = description
+#         self.price = price
+#
+#         pass
+#
+#     def markdown(self):
+#         a = '**' + self.title + '**'
+#         b = '--' + self.description + '--'
+#         c = '~~' + str(self.price) + '~~'
+#         return a + '\n' + b + '\n' + c
+#
+#     def html(self):
+#         a = '<b>' + self.title + '</b>'
+#         b = '<i>' + self.description + '</i>'
+#         c = '<strike>' + str(self.price) + '</strike>'
+#         return a + '\n' + b + '\n' + c
+#
+#
+#
+# towar = Markup('Товар', 'Описание', 150)
+#
+# print(towar.markdown())
+# print(towar.html())
 
-    def __init__(self, title: str, description: str, price: int) -> None:
-        self.title = title
-        self.description = description
-        self.price = price
-
-        pass
-
-    def markdown(self):
-        a = '**' + self.title + '**'
-        b = '--' + self.description + '--'
-        c = '~~' + str(self.price) + '~~'
-        return a + '\n' + b + '\n' + c
-
-
-towar = Markup('Товар', 'Описание', 150)
-
-print(towar.markdown())
-
+import re
+url = input("url: ").strip()
+username = re.search(r".*/(.+)$", url).group(1)
+print(username)
 
 
