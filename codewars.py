@@ -30,9 +30,23 @@
 # sort_array([1,2,3,4,5,6,7,8,9,10])
 
 
-def duplicate_encode(word):
-    #your code here
-    return ''.join(')' if word.count(i) > 1 else '(' for i in word)
-print(duplicate_encode('sdfghfghjfeogri'))
+# def duplicate_encode(word):
+#     #your code here
+#     return ''.join(')' if word.count(i) > 1 else '(' for i in word)
+# print(duplicate_encode('sdfghfghjfeogri'))
 
+
+import re
+
+url = input('input twitter username: ').strip()
+# https://www.twitter.com/sanr
+# http://www.twitter.com/sanr
+# https://twitter.com/sanr
+# http://twitter.com/sanr
+# www.twitter.com/sanr
+# twitter.com/sanr
+# sanr
+username = re.sub(r"^(https?://)?(www\.)?twitter\.con/", "", url)
+
+print(f'twitter user name = {username}')
 
