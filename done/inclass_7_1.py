@@ -88,9 +88,13 @@
 # print(towar.markdown())
 # print(towar.html())
 
-import re
-url = input("url: ").strip()
-username = re.search(r".*/(.+)$", url).group(1)
-print(username)
+# import re
+# url = input("url: ").strip()
+# username = re.search(r".*/(.+)$", url).group(1)
+# print(username)
+
+import pandas
+
+list2 = pandas.read_excel('exl.xlsx')
 
 
