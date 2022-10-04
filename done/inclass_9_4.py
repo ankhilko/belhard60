@@ -47,7 +47,7 @@ for line in list1:
         temp = line.split()
         if temp[0] not in dic1[flag]:
             dic1[flag][temp[0]] = {}
-        dic1[flag][temp[0]][f'{temp[1]} {temp[2]}'] = temp[-1]
+        dic1[flag][temp[0]][f'{temp[1]} {temp[2]}'] = int(temp[-1])
 
 pprint(dic1)
 
