@@ -95,6 +95,6 @@
 
 import pandas
 
-list2 = pandas.read_excel('exl.xlsx')
-
+list2 = pandas.read_excel('/home/sanr/PycharmProjects/belhard60/exl.xlsx')
+print(list2)
 
