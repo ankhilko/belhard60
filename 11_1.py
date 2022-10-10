@@ -76,14 +76,14 @@ categories_data = [f'Category {i}' for i in range(1, 4)]
 categories_data.insert(0, 'category')
 with open('categories_data.csv', 'w') as file:
     for line in categories_data:
-        file.write(','.join(line))
+        file.write(line)
         file.write('\n')
 
 statuses_data = ['Sent', 'Confirmed', 'Paid', 'Ready', 'Delivered']
 statuses_data.insert(0, 'status')
 with open('statuses_data.csv', 'w') as file:
     for line in statuses_data:
-        file.write(','.join(line))
+        file.write(line)
         file.write('\n')
 
 orders_data = [['2', '1'], ['3', '2'], ['3', '3'], ['1', '1'], ['2', '5']]
@@ -119,14 +119,14 @@ with open('categories_data.csv', 'r') as file:
     for n in datalist[1:]:
         cur.execute('''
         INSERT INTO categories(name) VALUES(?);
-        ''', (n, ))
+        ''', n, )
 
 with open('statuses_data.csv', 'r') as file:
     datalist = list(csv.reader(file))
     for n in datalist[1:]:
         cur.execute('''
         INSERT INTO statuses(name) VALUES(?);
-        ''', (n, ))
+        ''', n, )
 
 with open('orders_data.csv', 'r') as file:
     datalist = list(csv.reader(file))
