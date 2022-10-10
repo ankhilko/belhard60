@@ -62,11 +62,35 @@ CREATE TABLE IF NOT EXISTS order_items(
 conn.commit()
 
 # adding data:
-data = []
+data = [['Alex', 'alex@mail.com'], ['Max', 'mx@mail.com'], ['Nina', 'nina@mail.com']]
 cur.executemany('''
-INSERT INTO posts(title, body, is_published, user_id) VALUES(?, ?, ?, ?);
-''', (data[1:]), )
-conn.commit()
+INSERT INTO users(name, email) VALUES(?, ?);
+''', data, )
+
+data = (f'Category {i}' for i in range(1, 4))
+for n in data:
+    cur.execute('''
+    INSERT INTO categories(name) VALUES(?);
+    ''', (n, ))
+
+data = ['Sent', 'Confirmed', 'Paid', 'Ready', 'Delivered']
+for n in data:
+    cur.execute('''
+    INSERT INTO statuses(name) VALUES(?);
+    ''', (n, ))
+
+data = [['2', '1'], ['3', '2'], ['3', '3'], ['1', '1'], ['2', '5']]
+cur.executemany('''
+INSERT INTO orders(user_id, status_id) VALUES(?, ?);
+''', data, )
+
+data = [[f'Product {i}', f'Description of product {i}', f'{i % 2 + 1}'] for i in range(1, 7)]
+cur.executemany('''
+INSERT INTO products(title, description, category_id) VALUES(?, ?, ?);
+''', data, )
 
 
-
+data = [['1', '1'], ['1', '6'], ['2', '2'], ['3', '2'], ['3', '5'], ['3', '1'], ['4', '2'], ['4', '2'], ['5', '1']]
+cur.executemany('''
+INSERT INTO order_items(order_id, product_id) VALUES(?, ?);
+''', data, )
