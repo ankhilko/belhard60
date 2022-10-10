@@ -51,16 +51,34 @@
 # print(f'twitter user name = {username}')
 
 
-import re
+# import re
+#
+# url = input()
+#
+# username: str
+#
+# if match := re.search(r'^(?:https?://)?(?:www\.)?twitter.com/([a-z0-9_]+)/?$', url, re.IGNORECASE):
+# # if match := re.search(r'^(?:https?://)?(?:www\.)?twitter.com/([a-z0-9_]+)', url, re.IGNORECASE):
+#     username = match.group(1)
+#
+# print(username)
 
-url = input()
 
-username: str
 
-if match := re.search(r'^(?:https?://)?(?:www\.)?twitter.com/([a-z0-9_]+)/?$', url, re.IGNORECASE):
-# if match := re.search(r'^(?:https?://)?(?:www\.)?twitter.com/([a-z0-9_]+)', url, re.IGNORECASE):
-    username = match.group(1)
+import csv
 
-print(username)
+order_items_data = [['1', '1'], ['1', '6'], ['2', '2'], ['3', '2'], ['3', '5'], ['3', '1'], ['4', '2'], ['4', '2'], ['5', '1']]
+with open('order_items_data.csv', 'w') as file:
+    for line in order_items_data:
+        file.write(','.join(line))
+        file.write('\n')
+with open('order_items_data.csv', 'r') as file:
+    datalist = list(csv.reader(file))
+    datadict = dict(datalist)
+
+    print(datalist)
+    print(datadict)
+
+
 
 
