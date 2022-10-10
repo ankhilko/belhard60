@@ -67,7 +67,7 @@ cur.executemany('''
 INSERT INTO users(name, email) VALUES(?, ?);
 ''', data, )
 
-data = (f'Category {i}' for i in range(1, 4))
+data = [f'Category {i}' for i in range(1, 4)]
 for n in data:
     cur.execute('''
     INSERT INTO categories(name) VALUES(?);
@@ -94,3 +94,5 @@ data = [['1', '1'], ['1', '6'], ['2', '2'], ['3', '2'], ['3', '5'], ['3', '1'], 
 cur.executemany('''
 INSERT INTO order_items(order_id, product_id) VALUES(?, ?);
 ''', data, )
+
+conn.commit()
