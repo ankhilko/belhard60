@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS orders(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     status_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id), 
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE, 
     FOREIGN KEY (status_id) REFERENCES status(id)
 );
 ''')
@@ -151,3 +151,9 @@ with open('hw11/order_items_data.csv', 'r') as file:
 
 # send the data to the database
 conn.commit()
+
+
+cur.execute('''
+SELECT users.name FROM users;
+''')
+print(cur.fetchall())
