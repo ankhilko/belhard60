@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS orders(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     status_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE, 
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (status_id) REFERENCES status(id)
 );
 ''')
@@ -149,11 +149,13 @@ with open('hw11/order_items_data.csv', 'r') as file:
     INSERT INTO order_items(order_id, product_id) VALUES(?, ?);
     ''', datalist[1:], )
 
-# send the data to the database
+# # send the data to the database
 conn.commit()
 
 
 cur.execute('''
-SELECT users.name FROM users;
+SELECT products.title FROM products JOIN categories ON categories.id = 
+products.category_id WHERE categories.name = 'Category 2';
+
 ''')
 print(cur.fetchall())
