@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('sql.db') # db.sqlite3 two variant of file naming
+conn = sqlite3.connect('../sql.db') # db.sqlite3 two variant of file naming
 cur = conn.cursor()
 
 # DDL data definition language
