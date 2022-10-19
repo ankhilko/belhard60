@@ -1,6 +1,6 @@
 import sqlite3
 
-with open('../table.csv', 'r') as file:
+with open('table.csv', 'r') as file:
 
     data = file.readlines()
     data2 = []
@@ -8,7 +8,7 @@ with open('../table.csv', 'r') as file:
     for line in data:
         data2.append(line.strip().split('~'))
 
-conn = sqlite3.connect('../sql.db') # db.sqlite3 two variant of file naming
+conn = sqlite3.connect('sql.db') # db.sqlite3 two variant of file naming
 cur = conn.cursor()
 
 # for line in data2[1:]:
@@ -30,7 +30,7 @@ SELECT title, body, is_published, user_id FROM posts ORDER BY title DESC;
 
 list1 = cur.fetchall()
 
-with open('../newbd.csv', 'w') as file:
+with open('newbd.csv', 'w') as file:
     for line in list1:
         line = list(line)
         for i in range(len(line)):

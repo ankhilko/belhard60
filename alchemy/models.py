@@ -12,9 +12,8 @@ class User(Base):
     name = Column(VARCHAR(20), nullable=False) # mustn't be empty
     email = Column(VARCHAR(20), nullable=False, unique=True) # mustn't be empty, should be unique
     date_created = Column(TIMESTAMP, default=datetime.now())
-
+#    date_created = Column(TIMESTAMP(True), default=datetime.now()) # with time zone
     phone_number = Column(CHAR(13), default=False, unique=True)
-
     pass
 
 
@@ -67,3 +66,4 @@ class Product(Base):
 
 # SQLalchamia - not use for importing to database
 # SELECT products.title, order_items.product_id, orders.user_id FROM products JOIN order_items ON order_items.product_id = products.id JOIN orders ON order_items.order_id = orders.id;
+
